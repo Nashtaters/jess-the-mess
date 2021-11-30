@@ -6,6 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script>
+        // Open the Modal
+        function openModal() {
+          document.getElementById("myModal").style.display = "block";
+        }
+        
+        // Close the Modal
+        function closeModal() {
+          document.getElementById("myModal").style.display = "none";
+        }
+        
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        // Next/previous controls
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        // Thumbnail image controls
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("demo");
+          var captionText = document.getElementById("caption");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+          captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+    </script>
 </head>
 <body>
     <header class="header">
@@ -20,19 +62,166 @@
         </nav>
     </header>
     <main>
-        <a href="contactus.html">Contact Us</a>
-        <img src="images/beads.jpg" width="500 px" height="500 px" alt="beads">
-        <img src="images/cactus.jpg" width="500 px" height="500 px" alt="cactus">
-        <img src="images/craft-mat.jpg" width="500 px" height="500 px" alt="craft mat">
-        <img src="images/flower-paint.jpg" width="500 px" height="500 px" alt="flower painting">
-        <img src="images/knot.jpg" width="500 px" height="500 px" alt="knot">
-        <img src="images/plants.jpg" width="500 px" height="500 px" alt="plants">
-        <img src="images/rope.jpg" width="500 px" height="500 px" alt="rope">
-        <img src="images/tape.jpg" width="500 px" height="500 px" alt="tape">
-        <img src="images/thread.jpg" width="500 px" height="500 px" alt="thread">
-        <img src="images/wreath.jpg" width="500 px" height="500 px" alt="wreath">
-        <img src="images/rainbow.jpg" width="500 px" height="500 px" alt="rainbow">
-        <img src="images/pencils.jpg" width="500 px" height="500 px" alt="pencils">
+        <a href="contactus.html" id="contact-button">Contact Us</a>
+        <div class="row">
+            <div class="column">
+                <img src="images/beads.jpg" width="400px" height="400px" onclick="openModal();currentSlide(1)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="images/cactus.jpg" width="400px" height="400px" onclick="openModal();currentSlide(2)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="images/craft-mat.jpg" width="400px" height="400px" onclick="openModal();currentSlide(3)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="images/flower-paint.jpg" width="400px" height="400px" onclick="openModal();currentSlide(4)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="images/knot.jpg" width="400px" height="400px" onclick="openModal();currentSlide(5)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="images/plants.jpg" width="400px" height="400px" onclick="openModal();currentSlide(6)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="images/rope.jpg" width="400px" height="400px" onclick="openModal();currentSlide(7)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="images/tape.jpg" width="400px" height="400px" onclick="openModal();currentSlide(8)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="images/thread.jpg" width="400px" height="400px" onclick="openModal();currentSlide(9)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="images/wreath.jpg" width="400px" height="400px" onclick="openModal();currentSlide(10)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="images/rainbow.jpg" width="400px" height="400px" onclick="openModal();currentSlide(11)" class="hover-shadow">
+            </div>
+            <div class="column">
+                <img src="images/pencils.jpg" width="400px" height="400px" onclick="openModal();currentSlide(12)" class="hover-shadow">
+            </div>
+        </div>
+        <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+
+                <div class="mySlides">
+                    <div class="numbertext">1 / 12</div>
+                    <img src="images/beads.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">2 / 12</div>
+                    <img src="images/cactus.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">3 / 12</div>
+                    <img src="images/craft-mat.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">4 / 12</div>
+                    <img src="images/flower-paint.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">5 / 12</div>
+                    <img src="images/knot.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">6 / 12</div>
+                    <img src="images/plants.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">7 / 12</div>
+                    <img src="images/rope.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">8 / 12</div>
+                    <img src="images/tape.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">9 / 12</div>
+                    <img src="images/thread.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">10 / 12</div>
+                    <img src="images/wreath.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">11 / 12</div>
+                    <img src="images/rainbow.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">12 / 12</div>
+                    <img src="images/pencils.jpg" style="width:100%">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">Prev</a>
+                <a class="next" onclick="plusSlides(1)">Next</a>
+
+                <div class="caption-container">
+                    <p id="caption"></p>
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="images/beads.jpg" onclick="currentSlide(1)" alt="Beads">
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="images/cactus.jpg" onclick="currentSlide(1)" alt="Cactus">
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="images/craft-mat.jpg" onclick="currentSlide(1)" alt="Craft mat">
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="images/flower-paint.jpg" onclick="currentSlide(1)" alt="Painting of a flower">
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="images/knot.jpg" onclick="currentSlide(1)" alt="Rope tied in a knot">
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="images/plants.jpg" onclick="currentSlide(1)" alt="Dried plants">
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="images/rope.jpg" onclick="currentSlide(1)" alt="Rope">
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="images/tape.jpg" onclick="currentSlide(1)" alt="Adhesive supplies">
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="images/thread.jpg" onclick="currentSlide(1)" alt="Thread">
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="images/wreath.jpg" onclick="currentSlide(1)" alt="Wreath">
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="images/rainbow.jpg" onclick="currentSlide(1)" alt="Rainbow">
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="images/pencils.jpg" onclick="currentSlide(1)" alt="Colored pencils">
+                </div>
+
+            </div>
+        </div>
     </main>
     <footer>
         <h3>Jess The Mess &copy; 2021 - Curtis Nash</h3>
