@@ -209,6 +209,7 @@ main section img {
     grid-template-columns: 1fr 1fr 1fr;
     width: 90%;
     margin: 0 auto;
+    grid-gap: 50px;
 }
 
 .row:after {
@@ -225,6 +226,12 @@ main section img {
     height: 400px;
 }
 
+.column p {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
 .modal {
     display: none;
     position: fixed;
@@ -235,7 +242,7 @@ main section img {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: black;
+    background-color: #C5DAE7;
 }
 
 .modal-content {
@@ -274,6 +281,7 @@ main section img {
     padding: 16px;
     margin-top: -50px;
     color: black;
+    background-color: #FFD65C;
     font-weight: bold;
     font-size: 20px;
     transition: 0.6s ease;
@@ -288,12 +296,14 @@ main section img {
 }
 
 .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #EBBC70;
+    color: white;
 }
 
 .numbertext {
     color: black;
-    font-size: 12px;
+    font-size: 20px;
+    font-weight: bold;
     padding: 8px 12px;
     position: absolute;
     top: 0;
@@ -308,8 +318,9 @@ main section img {
 
 img.demo {
     opacity: 0.6;
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
 }
 
 .active, .demo:hover {
@@ -322,6 +333,61 @@ img.hover-shadow {
 
 .hover-shadow:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.contact-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.input-boxes {
+    grid-column: 2/3;
+    margin-top: 300px;
+    text-align: left;
+}
+
+#name {
+    width: 255px;
+}
+
+#mail {
+    width: 257px;
+}
+
+#description {
+    width: 200px;
+}
+
+.floating-left {
+    float: left;
+    grid-column: 1/2;
+    margin-top: 100px;
+}
+
+.floating-right {
+    float: right;
+    grid-column: 3/4;
+    margin-top: 100px;
+}
+
+#submit {
+    background-color: #FFD65C;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 70px;
+    height: 25px;
+    margin: 10px auto;
+}
+
+#submit:hover {
+    background-color: #EBBC70;
+    color: #C5DAE7;
 }
 
 footer {
